@@ -1,23 +1,17 @@
-def is_anagram(word):
-    frequency  = {}
-    for char in word:
-        if char in frequency:
-            frequency[char] += 1
-        else:
-            frequency[char] = 1
-    return frequency 
+def is_anagram():
+  a = str(input("insira a palavra: "))
+  b = str(input("insira a palavra: "))
 
-print("Insira a primeira palavra:")
-a_word = input()
-print(" ")
-print("Insira a segunda palavra:")
-b_word = input()
-print(" ")
+  a = a.lower()
+  b = b.lower()
 
-if (len(a_word) != len(b_word)):
-   print ("False")
-else:
-    if (is_anagram(a_word) == is_anagram(b_word)):
-        print("True")
-    else:
-        print("False")
+  a = sorted(a)
+  b = sorted(b)
+
+  if a == b:
+    return True
+  else:
+    return False
+
+anagram = is_anagram()
+print(anagram)
